@@ -1,5 +1,4 @@
-const url = "https://www.scorebat.com/video-api/v1/";
-
+const url = "https://ghibliapi.herokuapp.com/films"
 
 const infoContainer = document.querySelector(".container");
 //const loading = document.querySelector(".loading");
@@ -18,17 +17,17 @@ async function callVideo() {
         infoContainer.innerHTML = "";
 
         for (let i = 0; i <= jsonCount.length; i++) {
-            
+
             console.log(jsonCount[i].title);
-            console.log(jsonCount[i].competition.name);
-            console.log(jsonCount[i].thumbnail);
-            if (i == 12) {
+            console.log(jsonCount[i].release_date);
+            console.log(jsonCount[i].director);
+            if (i == 19) {
                 break;
             };
-            infoContainer.innerHTML += `<a href="detail.html?id=${jsonCount[i].competition.id}" class="match">
-            <div class="title"><h2>Match: ${jsonCount[i].title}</h2></div>
-            <div class="competition"><p>tournment: ${jsonCount[i].competition.name}</p></div>
-            <div class = "thumbnails" style="background-image: url('${jsonCount[i].thumbnail}');  height: 400px; width: 450px; background-repeat: no-repeat"></div> </a>`;
+            infoContainer.innerHTML += `<a href="detail.html?id=${jsonCount[i].id}" class="match">
+            <div class="title"><h2>film: ${jsonCount[i].title}</h2></div>
+            <div class="release-date"><p>Release date: ${jsonCount[i].release_date}</p></div>
+            <div class = "Director"> <p>Director: ${jsonCount[i].director}</p></div> </a>`;
         }
     }
     catch (error) {

@@ -1,4 +1,4 @@
-const matchDetails = document.querySelector(".match-details");
+const filmDetails = document.querySelector(".film-details");
 
 const queryString = document.location.search;
 const params = new URLSearchParams(queryString);
@@ -7,36 +7,34 @@ const id = params.get("id");
 
 console.log(id);
 
-const url = "https://www.scorebat.com/video-api/" + id;
-const corsFix = "https://noroffcors.herokuapp.com/" + url;
+const filmUrl = "https://ghibliapi.herokuapp.com/films/" + id;
 
-console.log(corsFix);
+console.log(filmUrl);
 
-//async function fetchProperties() {
+async function fetchProperties() {
 
-//    try {
+    try {
 
-//        const response = await fetch(corsFix);
-//        const details = await response.json();
+        const responseDetails = await fetch(filmUrl);
+        const filmInfo = await responseDetails.json();
 
-//        console.log(details);
+        console.log(filmInfo);
 
-//        createHtml(details);
-//    }
+        createHtml(filmInfo);
+    }
 
-//    catch (error) {
-//        console.log(error);
-//        containerDetails.innerHTML = message("error", error);
-//    }
+    catch (error) {
+        console.log(error);
+        filmDetails.innerHTML = "an error has occurred"
+    }
 
-//}
-// fetchProperties();
+}
+fetchProperties();
 
-function createHtml(details) {
-    containerDetails.innerHTML = `<h1>${details.name}</h1>
-   <div class = "details-image" style="background-image: url('${details.background_image}');  height: 400px; width: 100%; background-repeat: no-repeat"></div>
-   <div class="details-rating"><p>Rating: </p>${details.rating}</div>
-   <div class="details-released"><p>releasing date: </p>${details.released}</div>
-   <div class="details-released"><p>description: </p>${details.description}</div>`;
+function createHtml(filmInfo) {
+    filmDetails.innerHTML = `<h1>${filmInfo.title}</h1>
+   <div class="details-rating"><p>Director: </p>${filmInfo.director}</div>
+   <div class="details-released"><p>releasing date: </p>${filmInfo.release_date}</div>
+   <div class="details-released"><p>description: </p>${filmInfo.description}</div>`;
 
 }
