@@ -10,6 +10,11 @@ h1{
     margin: 40px;
 }
 
+h2{
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color:rgb(148, 53, 53);
+}
+
 .box{
     background-color: rgb(243, 195, 93);
     padding: 10px;
@@ -22,19 +27,56 @@ a{
 
   }
 
+  a:hover{
+    color: #408b5d;
+    text-decoration: none;
+
+  }
+
   form{
     margin: 100px auto;
-    text-align: center;
+
   }
 
   .subcontainer{
       margin: 10px;
+      width: 40%;
+      text-align: end;
   }
 
   label{
       margin: 5px;
   }
 
+
+@supports(-webkit-appearance: none) or (-moz-appearance: none) {
+    input[type='text'],
+    input[type='email'] {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      border-radius: 2px;
+      border:0;
+      width: 90%;
+      height: 20px;
+    }
+
+   #subject{
+        height:50px;
+    }
+  } 
+
   button{
-      text-align: center;
-  }
+    display: block;
+    text-align: center;
+    margin-left: 8%;
+    border:0;
+    padding: 3px 8px;
+    color: #2e85cc;
+}
+
+button:hover{
+    background-color: rgb(255, 138, 60);
+    border:0;
+    padding: 3px 8px;
+    color: bisque;
+}
