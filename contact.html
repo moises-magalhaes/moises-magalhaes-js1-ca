@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="error"></div>
+        <form name="contact-form" action="" method="GET">
+            <div>
+
+                <label for="name">Name</label>
+                <input name="name" id="name" type="text">
+                <span id="name-alert"></span>
+            </div>
+
+            <div>
+                <label for="subject">Subject</label>
+                <input name="subject" id="subject" type="text">
+                <span id="subject-alert"></span>
+            </div>
+
+            <div>
+                <label for="email">Email</label>
+                <input name="email" id="email" type="email">
+                <span id="email-alert"></span>
+            </div>
+
+            <div>
+                <label for="address">Address</label>
+                <input name="address" id="address" type="text">
+                <span id="address-alert"></span>
+            </div>
+
+            <button type="submit" onclick="return formValidation()">Submit</button>
+        </form>
+
+        <script src="js/contactform.js"></script>
+</body>
+
+</html>
