@@ -32,9 +32,9 @@ async function fetchProperties() {
 fetchProperties();
 
 function createHtml(filmInfo) {
-    filmDetails.innerHTML = `<h1>${filmInfo.title}</h1>
+    filmDetails.innerHTML = `<h1>${filmInfo.title}</h1> <div class="box">
    <div class="details-rating"><p>Director: </p>${filmInfo.director}</div>
    <div class="details-released"><p>releasing date: </p>${filmInfo.release_date}</div>
-   <div class="details-released"><p>description: </p>${filmInfo.description}</div>`;
+   <div class="details-released"><p>description: </p>${filmInfo.description}</div></div>`;
 
 }

@@ -1,0 +1,40 @@
+body{
+    background-color:#E2E8ED;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+h1{
+    text-align: center;
+}
+.container{
+    margin: 40px;
+}
+
+.box{
+    background-color: rgb(243, 195, 93);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+a{
+    color: #6632CF;
+    text-decoration: none;
+
+  }
+
+  form{
+    margin: 100px auto;
+    text-align: center;
+  }
+
+  .subcontainer{
+      margin: 10px;
+  }
+
+  label{
+      margin: 5px;
+  }
+
+  button{
+      text-align: center;
+  }
